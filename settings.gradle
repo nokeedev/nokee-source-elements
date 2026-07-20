@@ -9,7 +9,7 @@ plugins {
 
 include 'elements'
 include 'gradle-fixtures-source-elements'
-include 'nokeetemplates-plugins'
+//include 'nokeetemplates-plugins'
 include 'source-elements-annotation-processor'
 include 'test-gradle-projects'
 
