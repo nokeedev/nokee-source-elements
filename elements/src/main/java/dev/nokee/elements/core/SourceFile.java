@@ -150,7 +150,7 @@ public final class SourceFile {
 		assert !sourcePath.isAbsolute() : "'sourcePath' must be relative";
 		String name = sourcePath.getFileName().toString();
 		Path path = sourcePath.getParent();
-		return new SourceFile(path == null ? "" : path.toString(), name, content);
+		return new SourceFile(path == null ? "" : path.toString().replace('\\', '/'), name, content);
 	}
 
 	public interface ContentLoader {
