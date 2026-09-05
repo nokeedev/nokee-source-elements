@@ -117,7 +117,7 @@ public class GradleBuildElement extends ProjectElement {
 	}
 
 	public static GradleBuildElement empty() {
-		FileSystem fs = Jimfs.newFileSystem();
+		FileSystem fs = Jimfs.newFileSystem(Configuration.unix());
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 			try {
 				fs.close();
