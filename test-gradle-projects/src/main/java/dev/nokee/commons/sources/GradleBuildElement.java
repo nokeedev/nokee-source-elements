@@ -1,5 +1,6 @@
 package dev.nokee.commons.sources;
 
+import com.google.common.jimfs.Configuration;
 import com.google.common.jimfs.Jimfs;
 import dev.gradleplugins.buildscript.io.GradleBuildFile;
 import dev.gradleplugins.buildscript.io.GradleSettingsFile;
@@ -131,7 +132,7 @@ public class GradleBuildElement extends ProjectElement {
 		// Load settings.gradle[.kts] in GradleSettingsFile
 		// Extract plugin build
 		// Extract\
-		FileSystem fs = Jimfs.newFileSystem();
+		FileSystem fs = Jimfs.newFileSystem(Configuration.unix());
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 			try {
 				fs.close();
